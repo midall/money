@@ -17,10 +17,13 @@ public class MoneyTest {
     //SET THE OBJECTS TO USE IN ALL FUNCTIONS
     private Money m12CHF;
     private Money m13CHF;
+    private Money m25CHF;
     private Money m14USD;
     private Money m15EUR;
     private Money m16GBP;
     private Money m17GBP;
+    private Money m28GBP;
+    private Money m33GBP;
     
     //CONSTRUCTOR SAME AS @before
     public MoneyTest() {
@@ -39,10 +42,13 @@ public class MoneyTest {
         //INITIALIZE TWO OBJECTS
         m12CHF = new Money(12, "CHF");
         m13CHF = new Money(14, "CHF");
+        m25CHF = new Money(25, "CHF");
         m14USD = new Money(14, "USD");
-        m15EUR = new Money(14, "EUR");
-        m16GBP = new Money(14, "GBP");
-        m17GBP = new Money(14, "GBP");
+        m15EUR = new Money(15, "EUR");
+        m16GBP = new Money(16, "GBP");
+        m17GBP = new Money(17, "GBP");
+        m28GBP = new Money(28, "GBP");
+        m33GBP = new Money(33, "GBP");
     }
     
     @After
@@ -79,24 +85,17 @@ public class MoneyTest {
     @Test
     public void testAdd1() {
         System.out.println("add - 1");
-        Money m = new Money(10, "USD");
-        Money instance = new Money(10, "USD");
-        Money expResult = new Money(20, "USD");
-        Money result = instance.add(m);
+        Money expResult = m25CHF;
+        Money result = m12CHF.add(m13CHF);
         assertEquals(expResult, result);
        
     }
-
-    /**
-     * Test of add method, of class Money.
-     */
+    
     @Test
     public void testAdd2() {
-        System.out.println("TEST - add - 2");
-        Money m = new Money(10, "USD");
-        Money instance = new Money(10, "EUR");
-        Money expResult = new Money(20, "EUR");
-        Money result = instance.add(m);
+        System.out.println("add - 2");
+        Money expResult = m28GBP;
+        Money result = m12CHF.add(m16GBP);
         assertEquals(expResult, result);
         //assertTrue(expResult.equals(result));
        
@@ -104,14 +103,16 @@ public class MoneyTest {
     
     @Test
     public void testAdd3() {
+        System.out.println("add - 3");
         Money expected = new Money(26, "CHF");
         Money result = m12CHF.add(m13CHF);
         assertEquals(expected, result);
+        
     }
     
     @Test
     public void testAdd4() {
-        System.out.println("TEST - add - 3");
+        System.out.println("add - 4");
         Money m12CHF= new Money(12, "CHF");
         Money m14CHF= new Money(14, "CHF");
         Money expected= new Money(26, "CHF");
