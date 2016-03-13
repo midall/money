@@ -18,6 +18,7 @@ import static org.junit.Assert.*;
  */
 public class MoneyTest {
     
+    //SET THE OBJECTS TO USE IN ALL FUNCTIONS
     private Money m14CHF;
     private Money m12CHF;
     
