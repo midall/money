@@ -1,9 +1,4 @@
 /* NORMAL TEST */
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 
 import org.junit.After;
 import org.junit.AfterClass;
@@ -16,12 +11,18 @@ import static org.junit.Assert.*;
  *
  * @author Michalis
  */
+
 public class MoneyTest {
     
     //SET THE OBJECTS TO USE IN ALL FUNCTIONS
-    private Money m14CHF;
     private Money m12CHF;
+    private Money m13CHF;
+    private Money m14USD;
+    private Money m15EUR;
+    private Money m16GBP;
+    private Money m17GBP;
     
+    //CONSTRUCTOR SAME AS @before
     public MoneyTest() {
     } 
     
@@ -35,8 +36,13 @@ public class MoneyTest {
     
     @Before
     public void setUp() {
+        //INITIALIZE TWO OBJECTS
         m12CHF = new Money(12, "CHF");
-        m14CHF = new Money(14, "CHF");
+        m13CHF = new Money(14, "CHF");
+        m14USD = new Money(14, "USD");
+        m15EUR = new Money(14, "EUR");
+        m16GBP = new Money(14, "GBP");
+        m17GBP = new Money(14, "GBP");
     }
     
     @After
@@ -49,9 +55,8 @@ public class MoneyTest {
     @Test
     public void testAmount() {
         System.out.println("amount");
-        Money instance = new Money(10, "USD");
-        int expResult = 10;
-        int result = instance.amount();
+        int expResult = 12;
+        int result = m12CHF.amount();
         assertEquals(expResult, result);
         
     }
@@ -62,9 +67,8 @@ public class MoneyTest {
     @Test
     public void testCurrency() {
         System.out.println("currency");
-        Money instance = new Money(10, "USD");
         String expResult = "USD";
-        String result = instance.currency();
+        String result = m14USD.currency();
         assertEquals(expResult, result);
         
     }
@@ -74,7 +78,7 @@ public class MoneyTest {
      */
     @Test
     public void testAdd1() {
-        System.out.println("TEST - add - 1");
+        System.out.println("add - 1");
         Money m = new Money(10, "USD");
         Money instance = new Money(10, "USD");
         Money expResult = new Money(20, "USD");
@@ -101,7 +105,7 @@ public class MoneyTest {
     @Test
     public void testAdd3() {
         Money expected = new Money(26, "CHF");
-        Money result = m12CHF.add(m14CHF);
+        Money result = m12CHF.add(m13CHF);
         assertEquals(expected, result);
     }
     
@@ -145,7 +149,7 @@ public class MoneyTest {
     assertFalse(m12CHF.equals(null));
     assertEquals(m12CHF, m12CHF);
     assertEquals(m12CHF, new Money(12, "CHF"));
-    assertFalse(m12CHF.equals(m14CHF));
+    assertFalse(m12CHF.equals(m13CHF));
     }
         
     
