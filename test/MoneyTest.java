@@ -43,12 +43,11 @@ public class MoneyTest {
     @Test
     public void testAmount() {
         System.out.println("amount");
-        Money instance = null;
-        int expResult = 0;
+        Money instance = new Money(10, "USD");
+        int expResult = 10;
         int result = instance.amount();
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        
     }
 
     /**
@@ -57,12 +56,11 @@ public class MoneyTest {
     @Test
     public void testCurrency() {
         System.out.println("currency");
-        Money instance = null;
-        String expResult = "";
+        Money instance = new Money(10, "USD");
+        String expResult = "USD";
         String result = instance.currency();
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        
     }
 
     /**
@@ -71,13 +69,27 @@ public class MoneyTest {
     @Test
     public void testAdd() {
         System.out.println("add");
-        Money m = null;
-        Money instance = null;
-        Money expResult = null;
+        Money m = new Money(10, "USD");
+        Money instance = new Money(10, "USD");
+        Money expResult = new Money(20, "USD");
         Money result = instance.add(m);
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+       
+    }
+
+    /**
+     * Test of add method, of class Money.
+     */
+    @Test
+    public void testAdd1() {
+        System.out.println("add");
+        Money m = new Money(10, "USD");
+        Money instance = new Money(10, "EUR");
+        Money expResult = new Money(20, "EUR");
+        Money result = instance.add(m);
+        assertEquals(expResult, result);
+        //assertTrue(expResult.equals(result));
+       
     }
 
     /**
@@ -86,13 +98,13 @@ public class MoneyTest {
     @Test
     public void testEquals() {
         System.out.println("equals");
-        Object anObject = null;
-        Money instance = null;
-        boolean expResult = false;
+        Object anObject = new Money(10, "USD");
+        Money instance = new Money(10, "USD");
+        boolean expResult = true;
         boolean result = instance.equals(anObject);
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        //fail("The test case is a prototype.");
     }
     
 }
