@@ -116,9 +116,9 @@ public class MoneyTest {
     @Test
     public void testEquals1() {
         System.out.println("equals - 1");
-        Object anObject = new Money(10, "USD");
-        Money instance = new Money(10, "USD");
-        boolean expResult = true;
+        Object anObject = m12CHF;
+        Money instance = m13CHF;
+        boolean expResult = false;
         boolean result = instance.equals(anObject);
         assertEquals(expResult, result);
         
@@ -127,22 +127,10 @@ public class MoneyTest {
     @Test
     public void testEquals2() {
         System.out.println("equals - 2");
-        Money m12CHF= new Money(12, "CHF");
-        Money m14CHF= new Money(14, "CHF");
-        assertFalse(m12CHF.equals(null));
-        assertEquals(m12CHF, m12CHF);
-        assertEquals(m12CHF, new Money(12, "CHF"));
-        assertFalse(m12CHF.equals(m14CHF));
-    }
-    
-    @Test
-    public void testEquals3() {
-        System.out.println("equals - 3");
         assertFalse(m12CHF.equals(null));
         assertEquals(m12CHF, m12CHF);
         assertEquals(m12CHF, new Money(12, "CHF"));
         assertFalse(m12CHF.equals(m13CHF));
     }
-        
     
 }
