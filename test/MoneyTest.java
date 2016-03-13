@@ -18,11 +18,10 @@ public class MoneyTest {
     private Money m12CHF;
     private Money m13CHF;
     private Money m25CHF;
+    private Money m28CHF;
     private Money m14USD;
-    private Money m15EUR;
     private Money m16GBP;
     private Money m17GBP;
-    private Money m28GBP;
     private Money m33GBP;
     
     //CONSTRUCTOR SAME AS @before
@@ -39,15 +38,14 @@ public class MoneyTest {
     
     @Before
     public void setUp() {
-        //INITIALIZE TWO OBJECTS
+        //INITIALIZE OBJECTS
         m12CHF = new Money(12, "CHF");
-        m13CHF = new Money(14, "CHF");
+        m13CHF = new Money(13, "CHF");
         m25CHF = new Money(25, "CHF");
+        m28CHF = new Money(28, "CHF");
         m14USD = new Money(14, "USD");
-        m15EUR = new Money(15, "EUR");
         m16GBP = new Money(16, "GBP");
         m17GBP = new Money(17, "GBP");
-        m28GBP = new Money(28, "GBP");
         m33GBP = new Money(33, "GBP");
     }
     
@@ -82,6 +80,7 @@ public class MoneyTest {
     /**
      * Test of add method, of class Money.
      */
+    
     @Test
     public void testAdd1() {
         System.out.println("add - 1");
@@ -94,7 +93,7 @@ public class MoneyTest {
     @Test
     public void testAdd2() {
         System.out.println("add - 2");
-        Money expResult = m28GBP;
+        Money expResult = m28CHF;
         Money result = m12CHF.add(m16GBP);
         assertEquals(expResult, result);
         //assertTrue(expResult.equals(result));
