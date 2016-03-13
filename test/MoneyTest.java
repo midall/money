@@ -18,8 +18,11 @@ import static org.junit.Assert.*;
  */
 public class MoneyTest {
     
+    private Money m14CHF;
+    private Money m12CHF;
+    
     public MoneyTest() {
-    }
+    } 
     
     @BeforeClass
     public static void setUpClass() {
@@ -31,6 +34,8 @@ public class MoneyTest {
     
     @Before
     public void setUp() {
+        m12CHF = new Money(12, "CHF");
+        m14CHF = new Money(14, "CHF");
     }
     
     @After
@@ -67,8 +72,8 @@ public class MoneyTest {
      * Test of add method, of class Money.
      */
     @Test
-    public void testAdd() {
-        System.out.println("add");
+    public void testAdd1() {
+        System.out.println("TEST - add - 1");
         Money m = new Money(10, "USD");
         Money instance = new Money(10, "USD");
         Money expResult = new Money(20, "USD");
@@ -81,8 +86,8 @@ public class MoneyTest {
      * Test of add method, of class Money.
      */
     @Test
-    public void testAdd1() {
-        System.out.println("add");
+    public void testAdd2() {
+        System.out.println("TEST - add - 2");
         Money m = new Money(10, "USD");
         Money instance = new Money(10, "EUR");
         Money expResult = new Money(20, "EUR");
@@ -91,12 +96,29 @@ public class MoneyTest {
         //assertTrue(expResult.equals(result));
        
     }
-
+    
+    @Test
+    public void testAdd3() {
+        Money expected = new Money(26, "CHF");
+        Money result = m12CHF.add(m14CHF);
+        assertEquals(expected, result);
+    }
+    
+    @Test
+    public void testAdd4() {
+        System.out.println("TEST - add - 3");
+        Money m12CHF= new Money(12, "CHF");
+        Money m14CHF= new Money(14, "CHF");
+        Money expected= new Money(26, "CHF");
+        Money result= m12CHF.add(m14CHF);
+        assertEquals(expected, result);
+    }
+    
     /**
      * Test of equals method, of class Money.
      */
     @Test
-    public void testEquals() {
+    public void testEquals1() {
         System.out.println("equals");
         Object anObject = new Money(10, "USD");
         Money instance = new Money(10, "USD");
@@ -106,5 +128,24 @@ public class MoneyTest {
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");
     }
+    
+    @Test
+    public void testEquals2() {
+        Money m12CHF= new Money(12, "CHF");
+        Money m14CHF= new Money(14, "CHF");
+        assertFalse(m12CHF.equals(null));
+        assertEquals(m12CHF, m12CHF);
+        assertEquals(m12CHF, new Money(12, "CHF"));
+        assertFalse(m12CHF.equals(m14CHF));
+    }
+    
+    @Test
+    public void testEquals3() {
+    assertFalse(m12CHF.equals(null));
+    assertEquals(m12CHF, m12CHF);
+    assertEquals(m12CHF, new Money(12, "CHF"));
+    assertFalse(m12CHF.equals(m14CHF));
+    }
+        
     
 }
