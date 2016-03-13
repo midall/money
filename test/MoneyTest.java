@@ -104,20 +104,10 @@ public class MoneyTest {
     @Test
     public void testAdd3() {
         System.out.println("add - 3");
-        Money expected = new Money(26, "CHF");
-        Money result = m12CHF.add(m13CHF);
+        Money expected = m33GBP;
+        Money result = m16GBP.add(m17GBP);
         assertEquals(expected, result);
         
-    }
-    
-    @Test
-    public void testAdd4() {
-        System.out.println("add - 4");
-        Money m12CHF= new Money(12, "CHF");
-        Money m14CHF= new Money(14, "CHF");
-        Money expected= new Money(26, "CHF");
-        Money result= m12CHF.add(m14CHF);
-        assertEquals(expected, result);
     }
     
     /**
@@ -125,18 +115,18 @@ public class MoneyTest {
      */
     @Test
     public void testEquals1() {
-        System.out.println("equals");
+        System.out.println("equals - 1");
         Object anObject = new Money(10, "USD");
         Money instance = new Money(10, "USD");
         boolean expResult = true;
         boolean result = instance.equals(anObject);
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        
     }
     
     @Test
     public void testEquals2() {
+        System.out.println("equals - 2");
         Money m12CHF= new Money(12, "CHF");
         Money m14CHF= new Money(14, "CHF");
         assertFalse(m12CHF.equals(null));
@@ -147,10 +137,11 @@ public class MoneyTest {
     
     @Test
     public void testEquals3() {
-    assertFalse(m12CHF.equals(null));
-    assertEquals(m12CHF, m12CHF);
-    assertEquals(m12CHF, new Money(12, "CHF"));
-    assertFalse(m12CHF.equals(m13CHF));
+        System.out.println("equals - 3");
+        assertFalse(m12CHF.equals(null));
+        assertEquals(m12CHF, m12CHF);
+        assertEquals(m12CHF, new Money(12, "CHF"));
+        assertFalse(m12CHF.equals(m13CHF));
     }
         
     
