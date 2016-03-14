@@ -5,6 +5,7 @@ import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
+import org.junit.Ignore;
 import static org.junit.Assert.*;
 
 /**
@@ -80,7 +81,6 @@ public class MoneyTest {
     /**
      * Test of add method, of class Money.
      */
-    
     @Test
     public void testAdd1() {
         System.out.println("add - 1");
@@ -103,6 +103,16 @@ public class MoneyTest {
     @Test
     public void testAdd3() {
         System.out.println("add - 3");
+        Money expected = m33GBP;
+        Money result = m16GBP.add(m17GBP);
+        assertEquals(expected, result);
+        
+    }
+    
+    @Ignore("Test is ignored as a demonstration")
+    @Test
+    public void testAdd4() {
+        System.out.println("add - 4");
         Money expected = m33GBP;
         Money result = m16GBP.add(m17GBP);
         assertEquals(expected, result);
