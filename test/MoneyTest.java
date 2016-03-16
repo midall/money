@@ -8,11 +8,6 @@ import org.junit.Test;
 import org.junit.Ignore;
 import static org.junit.Assert.*;
 
-/**
- *
- * @author Michalis
- */
-
 public class MoneyTest {
     
     //SET THE OBJECTS TO USE IN ALL FUNCTIONS
