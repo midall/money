@@ -1,3 +1,4 @@
+/* TRUNK */
 class Money {
 
     private int fAmount;
