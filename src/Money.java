@@ -1,4 +1,4 @@
-/* TRUNK */
+/* TRUNK OR BRANCH */
 class Money {
 
     private int fAmount;
